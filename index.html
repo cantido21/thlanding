@@ -1,25 +1,13 @@
-/**
- * Determine the mobile operating system.
- * This function returns one of 'iOS', 'Android', 'Windows Phone', or 'unknown'.
- *
- * @returns {String}
- */
-function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+<div><br class="Apple-interchange-newline"><!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SharePoint Redirect</title><script>
+            function getMobileOperatingSystem() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-    // Windows Phone must come first because its UA also contains "Android"
-    if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
-    }
-
-    if (/android/i.test(userAgent)) {
-        return "Android";
-    }
-
-    // iOS detection from: http://stackoverflow.com/a/9039885/177710
-    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
-    }
-
-    return "unknown";
-}
+            if (/android/i.test(userAgent)) {
+                 window.location.href = "https://trihealthcld.sharepoint.com/sites/LDINov2024";
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                 window.location.href = "ms-sharepoint://https://trihealthcld.sharepoint.com/sites/LDINov2024";
+            } else {
+                 window.location.href = "https://trihealthcld.sharepoint.com/sites/LDINov2024";
+            }
+        }
+    </script></head><body onload="redirect()"><p>Redirecting...</p></body></html></div>
